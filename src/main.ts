@@ -1,13 +1,16 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import * as config from 'config';
 
 import { AppModule } from './app.module';
 
-async function bootstrap() {
-  // Get env values
-  const SERVER_CONFIG = config.get('server');
+// Get env values
+const SERVER_CONFIG = config.get('server');
 
+async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  app.useGlobalPipes(new ValidationPipe());
 
   // Enable requests from other origins (To be disabled in static files serving )
   app.enableCors();
