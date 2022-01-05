@@ -28,7 +28,7 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  // Function to get user details
+  // Get user details
   async getUserDetails(user: AuthEntity): Promise<AuthEntity> {
     return this.authRepository.getUserDetails(user);
   }

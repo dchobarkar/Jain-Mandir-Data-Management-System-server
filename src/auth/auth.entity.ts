@@ -6,9 +6,11 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
 
 import { UserType } from './auth.model';
+import { MemberEntity } from 'src/member/member.entity';
 
 @Entity()
 export class AuthEntity extends BaseEntity {
@@ -35,4 +37,14 @@ export class AuthEntity extends BaseEntity {
 
   @UpdateDateColumn({ type: 'timestamp without time zone' })
   updatedAt: Date;
+
+  // Relation with MemberEntity
+  @OneToMany(() => MemberEntity, (memberEntity) => memberEntity.createdBy, {
+    eager: true,
+  })
+  cMemberEntity: MemberEntity;
+  @OneToMany(() => MemberEntity, (memberEntity) => memberEntity.updatedBy, {
+    eager: true,
+  })
+  uMemberEntity: MemberEntity;
 }
