@@ -11,6 +11,7 @@ import {
 
 import { UserType } from './auth.model';
 import { MemberEntity } from 'src/member/member.entity';
+import { MInventoryEntity } from 'src/m-inventory/m-inventory.entity';
 
 @Entity()
 export class AuthEntity extends BaseEntity {
@@ -39,12 +40,22 @@ export class AuthEntity extends BaseEntity {
   updatedAt: Date;
 
   // Relation with MemberEntity
-  @OneToMany(() => MemberEntity, (memberEntity) => memberEntity.createdBy, {
+  @OneToMany(() => MemberEntity, (entity) => entity.createdBy, {
     eager: true,
   })
   cMemberEntity: MemberEntity;
-  @OneToMany(() => MemberEntity, (memberEntity) => memberEntity.updatedBy, {
+  @OneToMany(() => MemberEntity, (entity) => entity.updatedBy, {
     eager: true,
   })
   uMemberEntity: MemberEntity;
+
+  // Relation with MInventoryEntity
+  @OneToMany(() => MInventoryEntity, (entity) => entity.createdBy, {
+    eager: true,
+  })
+  cMInventoryEntity: MInventoryEntity;
+  @OneToMany(() => MInventoryEntity, (entity) => entity.updatedBy, {
+    eager: true,
+  })
+  uMInventoryEntity: MemberEntity;
 }
