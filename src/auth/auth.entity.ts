@@ -12,6 +12,7 @@ import {
 import { UserType } from './auth.model';
 import { MemberEntity } from 'src/member/member.entity';
 import { MInventoryEntity } from 'src/m-inventory/m-inventory.entity';
+import { AccountEntity } from 'src/account/account.entity';
 
 @Entity()
 export class AuthEntity extends BaseEntity {
@@ -58,4 +59,10 @@ export class AuthEntity extends BaseEntity {
     eager: true,
   })
   uMInventoryEntity: MemberEntity;
+
+  // Relation with AccountEntity
+  @OneToMany(() => AccountEntity, (entity) => entity.createdBy, { eager: true })
+  cAccountEntity: AccountEntity;
+  @OneToMany(() => AccountEntity, (entity) => entity.updatedBy, { eager: true })
+  uAccountEntity: AccountEntity;
 }
