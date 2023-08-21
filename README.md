@@ -18,18 +18,20 @@
 A simple web app to handle all data related to a temple management
 
 ### Technology Stack
- * TypeScript  
- * JavaScript  
- * Based on Nest framework  
- * Database - PostgreSQL
 
- ### Installation
+- TypeScript
+- JavaScript
+- Based on Nest framework
+- Database - PostgreSQL
 
-   $ npm install
+### Installation
+
+    $ npm install
     $ npm run start
-  
-  Nevigate to `http://localhost:5000/login`  
-  Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+Nevigate to `http://localhost:5000/login`  
+ Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
 ### Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
