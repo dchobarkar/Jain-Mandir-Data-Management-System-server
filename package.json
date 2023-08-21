@@ -1,10 +1,10 @@
 {
-  "name": "mandir_data_management_system_server",
-  "version": "0.0.1",
-  "description": "",
-  "author": "Darshan",
+  "name": "temple-data-management-system",
+  "description": "database management system for a temple",
+  "version": "1.0.0",
+  "author": "Darshan Chobarkar <contact@darshanwebdev.com> (https://darshanwebdev.com)",
+  "license": "MIT",
   "private": true,
-  "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
